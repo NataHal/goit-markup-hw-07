@@ -98,6 +98,18 @@ header .container {
 .header-contacts > li:not(:last-child) {
   margin-right: 30px;
 }
+@media screen and (max-width: 1200px) {
+  .header-contacts {
+    flex-direction: column;
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .header-contacts .header-mail {
+    margin-bottom: 10px;
+  }
+}
+
 .header-list-icon {
   color: var(--second-color);
 }
@@ -152,6 +164,16 @@ header .container {
   display: block;
   fill: var(--main-color);
 }
+@media screen and (min-width: 768px) {
+  .header-container-mobile {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container.header-container-desktop {
+    display: none;
+  }
+}
 
 .main {
   max-width: 1600px;
@@ -184,11 +206,23 @@ header .container {
   margin-bottom: 30px;
   text-align: center;
 }
+@media screen and (max-width: 1200px) {
+  .main-title {
+    font-size: 26px;
+    line-height: 1.62;
+  }
+}
+
 .main-btn {
   width: 217px;
   height: 50px;
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (max-width: 1200px) {
+  .main-btn {
+    width: 200px;
+  }
 }
 .main-btn-btn {
   padding: 10px 32px;
@@ -206,6 +240,11 @@ header .container {
   letter-spacing: 0.06em;
   color: #ffffff;
   transition: background var(--timing-function);
+}
+@media screen and (max-width: 1200px) {
+  .main-btn-btn {
+    padding: 10px 24px;
+  }
 }
 /*--features--*/
 .features {
@@ -915,26 +954,4 @@ ul {
   background-color: var(--accent-color);
   border: none;
   fill: var(--main-bg-color);
-}
-@media screen and (max-width: 1200px) {
-  .header-contacts {
-    flex-direction: column;
-    display: inline-block;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .header-contacts .header-mail {
-    margin-bottom: 10px;
-  }
-}
-@media screen and (mix-width: 768px) {
-  .header-container-mobile {
-    display: none;
-  }
-}
-@media screen and (max-width: 768px) {
-  .container.header-container-desktop {
-    display: none;
-  }
 }
