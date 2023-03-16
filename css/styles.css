@@ -36,18 +36,45 @@ a {
   text-decoration: none;
 }
 .container {
+  min-width: 320px;
+  max-width: 480px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*@media screen and (min-width: 320px) {
+  .container {
+    max-width: 320px;
+  }
+}
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 480px;
+  }
+}*/
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/*.container {
   width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
-}
+}*/
 /*--header--*/
 header .container {
   display: flex;
   align-items: center;
-}
-@media screen and (max-width: 1200px) {
-  header .container {
-  }
+  /*padding-left: 15px;
+  padding-right: 15px;*/
 }
 .header-container {
   margin-left: auto;
@@ -78,7 +105,12 @@ header .container {
   padding: 24px 0;
   margin-right: 93px;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 768px) {
+  .header-logo {
+    margin-right: auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {
   .header-logo {
     margin-right: 88px;
   }
@@ -147,23 +179,12 @@ header .container {
 .header-link {
   color: var(--main-color);
 }
-
-.header-menu-btn {
+.header-container-mobile {
   display: flex;
   align-items: center;
-  padding-right: 15px;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  margin-left: auto;
+  justify-content: space-between;
 }
-.container.header-menu-icon {
-  display: block;
-  fill: var(--main-color);
-}
+
 @media screen and (min-width: 768px) {
   .header-container-mobile {
     display: none;
@@ -174,7 +195,74 @@ header .container {
     display: none;
   }
 }
+.header-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  fill: var(--main-color);
+  border: none;
+  margin-left: auto;
+}
+.mobile-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  max-width: 480px;
+  background: #ffffff;
+  padding: 80px 40px 40px;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+  transform: translateX(100%);
+  transform: translate 1s;
+}
+.menu-toggle {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 24px;
+  height: 24px;
+  background: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  padding: 8px;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background var(--timing-function),
+    border-radius var(--timing-function), fill var(--timing-function);
+}
 
+.menu-toggle:hover,
+.menu-toggle:focus {
+  background: var(--accent-color);
+  border: none;
+  fill: var(--main-bg-color);
+}
+.mobile-menu-list > .mobile-link {
+  margin-bottom: 40px;
+}
+
+.mobile-container.js-open {
+  transform: translate(0);
+}
+.mobile-link {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 47px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: var(--main-color);
+  margin-bottom: 32px;
+}
 .main {
   max-width: 1600px;
   min-height: 600px;
@@ -213,18 +301,24 @@ header .container {
   }
 }
 
-.main-btn {
+/*.main-btn {
   width: 217px;
   height: 50px;
   margin-left: auto;
   margin-right: auto;
+  display: block;
 }
 @media screen and (max-width: 1200px) {
   .main-btn {
     width: 200px;
+    max-height: 50px;
   }
-}
+}*/
 .main-btn-btn {
+  width: 217px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 10px 32px;
   background: #2196f3;
   border: none;
@@ -237,13 +331,16 @@ header .container {
   display: flex;
   align-items: center;
   text-align: center;
+  justify-content: center;
   letter-spacing: 0.06em;
   color: #ffffff;
   transition: background var(--timing-function);
 }
 @media screen and (max-width: 1200px) {
   .main-btn-btn {
-    padding: 10px 24px;
+    width: 201px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 }
 /*--features--*/
@@ -697,7 +794,6 @@ header .container {
 }
 
 .footer-btn-btn {
-  display: flex;
   width: 200px;
   height: 50px;
   margin-right: auto;
